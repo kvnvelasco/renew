@@ -3,6 +3,7 @@
     display:grid;
     grid-template-columns: 220px 1fr 300px;
     margin:auto;
+    margin-top:30px;
     width:60%;
     height:140px;
     justify-content: space-around;
@@ -64,6 +65,7 @@
     color:#fff;
     font-size:20px;
     border:none;
+    cursor: pointer;
 }
 
 .decrement-btn{
@@ -76,6 +78,7 @@
     color:#fff;
     font-size:20px;
     border:none;
+    cursor: pointer;
 }
 
 .procurement input{
