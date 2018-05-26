@@ -2,32 +2,37 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-  name: String
+  name: { type: String, required: true }
 });
 
 var transactionSchema = new Schema({
   date: {
-    type: Date, default: Date.now 
+    type: Date, 
+    default: Date.now() 
   },
-  product_name: String,
+  product_name: { type: String, required: true },
   user: String
 });
 
 var productSchema = new Schema({
-  product_name: String,
-  details: String
+  name: { type: String, required: true },
+  description: String,
+  image_url: String
 });
 
 var pickUpSchema = new Schema({
-  pickup_date: Date,
-  address: String
+  date_of_pickup: { type: Date, required: true },
+  address: { type: String, required: true },
+  user_id: { type: Schema.Types.ObjectId, required: true },
+  active: Boolean
 });
 
 var deliverySchema = new Schema({
-  delivery_date: Date,
-  product_name: String,
-  recipient: String,
-  address: String
+  date_of_delivery: { type: Date, required: true },
+  products: { type: [String], required: true },
+  user_id: { type: Schema.Types.ObjectId, required: true },
+  address: { type: String, required: true },
+  active: Boolean
 })
 
 var User = mongoose.model('User', userSchema);
@@ -38,8 +43,8 @@ var Delivery = mongoose.model('Delivery', deliverySchema)
 
 module.exports = {
   User,
-  Account,
   Transaction,
-  ProcurementItem,
-  PickUp
+  Product,
+  PickUp,
+  Delivery
 };
