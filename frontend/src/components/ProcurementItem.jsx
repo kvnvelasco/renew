@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-
 export default class ProcurementItem extends React.Component {
 
   state = {
@@ -25,7 +24,13 @@ export default class ProcurementItem extends React.Component {
   )
 
   orderedItem = () => {
-    this.setState({selected: true})
+    if (this.state.selected) {
+      if (this.props.onOrder)
+        this.props.onOrder({id: this.props.id, quantity: this.state.qty});
+      this.setState({selected: false, qty: 1});
+    } else {
+      this.setState({ selected: true });
+    }
   }
 
   render() {
@@ -41,7 +46,13 @@ export default class ProcurementItem extends React.Component {
             {this.state.selected ? this.renderItemCounter() : null}
             <div className="item-req">
               <strong>10.6 vits / pc</strong>
-              <button className="order-btn" onClick={() => this.orderedItem()}><strong>Order</strong></button>
+              <button className="btn btn-primary order-btn" onClick={() => this.orderedItem()}>
+                <strong>{
+                  this.state.selected
+                    ? 'Confirm'
+                    : 'Order'
+                }</strong>
+              </button>
             </div>
           </div>
         </div>

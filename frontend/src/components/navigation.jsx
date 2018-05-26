@@ -1,7 +1,8 @@
 import './navigation.css';
 import logo from '../pictures/logo.png';
 import cart from '../pictures/cart.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+
 
 import * as React from 'react';
 
