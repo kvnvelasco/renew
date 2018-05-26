@@ -1,0 +1,10 @@
+FROM node:8.9.1 
+
+RUN mkdir /opt/renew-back 
+WORKDIR /opt/renew-back 
+COPY package-lock.json package.json ./
+RUN npm install 
+
+COPY src ./src 
+
+CMD npm start

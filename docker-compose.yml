@@ -1,0 +1,25 @@
+version: '3'
+
+
+services:
+  db: 
+    image: mongo:latest
+    ports:
+       - 8081:8081
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+  backend:
+    build: ./backend
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/opt/renew-backend 
+  frontend:
+    build: ./frontend
+    ports:
+      - 8080:3000
+    volumes:
+      - ./frontend:/opt/renew-frontend
+    
+    
