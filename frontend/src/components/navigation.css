@@ -1,5 +1,6 @@
 .nav-container{
-    background-color: #5BC4BB;
+    color: #5BC4BB;
+    background: white;
 }
 
 .nav-container a {
@@ -12,7 +13,7 @@
   font-weight: bold;
   background: white;
   margin: auto 0 auto 0;
-  color: #5BC4BB;
+  
   padding: 10px;
   border-radius: 20px;
 }
@@ -26,7 +27,7 @@
 
 .nav--link-item {
     width: 100%;
-    color: white;
+    
     margin: auto 0 auto 0;
 }
 
