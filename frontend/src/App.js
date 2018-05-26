@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
 import './App.css';
 
-import Navigation from './components/navigation'
-import MyAccount from './pages/MyAccount'
-import Procurement from './pages/Procurement.jsx'
-import OrdersPickups from './pages/Orders_pickups'
-import Home from './pages/Home'
-import { Switch, NavLink, Route } from 'react-router-dom'
-import Toaster from './toast/toasters'
-import { connect } from 'react-redux'
-import store from './store/store'
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import Navigation from './components/navigation';
+import Checkout from './pages/Checkout';
+import Home from './pages/Home';
+import MyAccount from './pages/MyAccount';
+import OrdersPickups from './pages/Orders_pickups';
+import Procurement from './pages/Procurement';
+import Toaster from './toast/toasters';
 
 class App extends Component {
   render() {
@@ -21,6 +21,7 @@ class App extends Component {
             <Route path="/procurement" component={Procurement} />
             <Route path="/orders" component={OrdersPickups} />
             <Route path="/MyAccount" component={MyAccount} />
+            <Route path='/checkout' component={Checkout} />
             <Route path="/" component={Home} exact />
           </Switch>
         </div>

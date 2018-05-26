@@ -9,11 +9,12 @@
 
 .nav-container a.active {
   width: 100%;
-    background: white;
-    margin: auto 0 auto 0;
-    color: #5BC4BB;
-    padding: 5px;
-    border-radius: 20px;
+  font-weight: bold;
+  background: white;
+  margin: auto 0 auto 0;
+  color: #5BC4BB;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .nav--links {
@@ -41,7 +42,7 @@
 
 .button {
     background: inherit;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 15px;
 }
 
