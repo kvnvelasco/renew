@@ -40,7 +40,7 @@ function postPickUp(req, res, next) {
 
 function getPickUpByUserId(req, res, next) {
   const user_id = req.params.userid
-  PickUp.find({"user_id": user_id}).then(pickup => {
+  PickUp.find({ user_id }).then(pickup => {
     res.status(200).send(pickup)
     next();
   }, err => {

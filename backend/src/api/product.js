@@ -20,8 +20,8 @@ function postProduct(req, res, next) {
 }
 
 function getProductById(req, res, next) {
-  const product_id = req.params.id
-  Product.findOne({"_id": product_id}).then(product => {
+  const _id = req.params.id
+  Product.findOne({ _id }).then(product => {
     res.status(200).send(product)
     next();
   }, err => {
@@ -32,8 +32,8 @@ function getProductById(req, res, next) {
 }
 
 function getProductByName(req, res, next) {
-  const product_name = req.query.name
-  Product.find({"name": product_name}).then(product => {
+  const name = req.query.name
+  Product.find({ name }).then(product => {
     res.status(200).send(product)
     next();
   }, err => {
