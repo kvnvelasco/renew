@@ -7,5 +7,4 @@ const mongoose = require('./db/mongodb-connect');
 
 var { User } = require('./db/models');
 
-
 app.listen(port, () => console.log(`Server is up on port ${port}`));
