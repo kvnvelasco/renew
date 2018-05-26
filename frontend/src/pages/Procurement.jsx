@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './pages_styles/Procurement.css';
+// import './pages_styles/Procurement.css';
 
 
 const items = [
@@ -49,9 +49,9 @@ export default class Procurement extends Component {
     }
 
     renderItems = () => {
-        return items.map(items => {
+        return items.map((items, idx) => {
             return (
-                <div className="procurement-card">
+                <div key={idx} className="procurement-card">
                     <img className="procurement-image" src={items.imageUrl} />
                     <div className="procurement column-2">
                         <strong>{items.name}</strong> {items.description}

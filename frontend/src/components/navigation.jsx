@@ -1,6 +1,8 @@
 import './navigation.css';
 import logo from '../pictures/logo.png';
 import cart from '../pictures/cart.png';
+import { NavLink } from 'react-router-dom';
+
 import * as React from 'react';
 
 export default function Navigation(props){
@@ -11,13 +13,13 @@ export default function Navigation(props){
                     <img className="logo" alt="logo" src={logo}/>
                 </li>
                 <li className='nav--link-item'>
-                    <a className='button'>Procurement</a>
+                    <NavLink to="/procurement" className='button'>Procurement</NavLink>
                 </li>
                 <li className='nav--link-item'>
-                    <a className='button'>Orders / Pickups</a>
+            <NavLink to="/orders" className='button'>Orders / Pickups</NavLink>
                 </li>
                 <li className='nav--link-item'>
-                    <a className='button'>My&nbsp;Account</a>
+                    <NavLink to="/account" className='button'>My&nbsp;Account</NavLink>
                 </li>
                 <li className='nav--link-item'>
                     <span>Your Balance</span>
