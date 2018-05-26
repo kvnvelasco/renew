@@ -6,16 +6,20 @@ services:
     image: mongo:latest
     ports:
        - 8081:8081
+       - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=renew
   backend:
     build: ./backend
     ports:
       - 5000:5000
     volumes:
-      - ./backend:/opt/renew-backend 
+      - ./backend:/opt/renew-back
       - back_modules:/opt/renew-backend/node_modules
+    depends_on:
+      - db 
   frontend:
     build: ./frontend
     ports:
