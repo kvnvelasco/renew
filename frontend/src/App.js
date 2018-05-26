@@ -4,9 +4,10 @@ import MyAccount from './pages/MyAccount'
 import Procurement from './pages/Procurement'
 import OrdersPickups from './pages/Orders_pickups'
 import Home from './pages/Home'
-
 import { Switch, NavLink, Route } from 'react-router-dom'
-
+import Toaster from './toast/toasters'
+import { connect } from 'react-redux'
+import store from './store/store'
 
 class App extends Component {
   render() {
@@ -32,9 +33,10 @@ class App extends Component {
             <Route path="/" component={Home} exact />
           </Switch>
         </div>
+        <Toaster/>
       </div>
     );
   }
 }
 
-export default App;
+export default App
