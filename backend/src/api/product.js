@@ -5,7 +5,8 @@ function postProduct(req, res, next) {
   const product = new Product({
     name: req.body.name,
     description: req.body.description,
-    image_url: req.body.image_url
+    image_url: req.body.image_url,
+    category: req.body.category
   })
   
   product.save().then(product => {
@@ -40,7 +41,7 @@ function getProductByName(req, res, next) {
     res.status(400).send(err)
     next();
   })
-}
+};
 
 module.exports = {
   getProductById,
