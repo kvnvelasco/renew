@@ -45,7 +45,7 @@ export default class ProcurementItem extends React.Component {
           <div className="procurement">
             {this.state.selected ? this.renderItemCounter() : null}
             <div className="item-req">
-              <strong>10.6 vits / pc</strong>
+              <strong>10.6 REN / pc</strong>
               <button className="btn btn-primary order-btn" onClick={() => this.orderedItem()}>
                 <strong>{
                   this.state.selected
