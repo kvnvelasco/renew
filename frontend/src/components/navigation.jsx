@@ -16,7 +16,7 @@ export default function Navigation(props){
                     <NavLink to="/procurement" className='button'>Procurement</NavLink>
                 </li>
                 <li className='nav--link-item'>
-            <NavLink to="/orders" className='button'>Orders / Pickups</NavLink>
+            <NavLink to="/orders" className='button'>Pickups / Deliveries</NavLink>
                 </li>
                 <li className='nav--link-item'>
                     <NavLink to="/account" className='button'>My&nbsp;Account</NavLink>
