@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 5000;
 
 const mongoose = require('./db/mongodb-connect');
 
-var { User } = require('./db/models');
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use((req, res, next) => {
   const date = Date.now();
