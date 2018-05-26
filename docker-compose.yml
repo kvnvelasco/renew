@@ -16,14 +16,10 @@ services:
     ports:
       - 5000:5000
     volumes:
-<<<<<<< HEAD
       - ./backend:/opt/renew-back
+      - back_modules:/opt/renew-backend/node_modules
     depends_on:
       - db 
-=======
-      - ./backend:/opt/renew-backend 
-      - back_modules:/opt/renew-backend/node_modules
->>>>>>> master
   frontend:
     build: ./frontend
     ports:
