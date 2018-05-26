@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import './pages_styles/Procurement.css';
-
+import './pages_styles/Procurement.css';
+import ProcurementItem from '../components/ProcurementItem'
 
 const items = [
     {
@@ -17,63 +17,15 @@ const items = [
     }
 ]
 export default class Procurement extends Component {
-    state = {
-        selected: false,
-        value: 1
-    }
-
-    renderItemCounter = () => {
-        return (
-            <div className="procurement">
-                <button onClick={() => this.decrement()}className="decrement-btn">-</button>
-                <input type="text" value={this.state.value} />
-                <button onClick={() => this.increment()} className="increment-btn">+</button>
-            </div>
-        )
-    }
-
-    increment = () => {
-        this.setState({ value: this.state.value + 1})
-    }
-
-    decrement = () => {
-        if(this.state.value !== 1){
-            this.setState({ value: this.state.value - 1})
-        }
-    }
-
-    orderedItem = () => {
-        this.setState({
-            selected: true
-        })
-    }
-
-    renderItems = () => {
-        return items.map((items, idx) => {
-            return (
-                <div key={idx} className="procurement-card">
-                    <img className="procurement-image" src={items.imageUrl} />
-                    <div className="procurement column-2">
-                        <strong>{items.name}</strong> {items.description}
-                    </div>
-                    <div className="procurement column-3">
-                        <div className="procurement">
-                            { this.state.selected ? this.renderItemCounter() : null }
-                            <div className="item-req">
-                                <strong>10.6 vits / pc</strong>
-                                <button className="order-btn" onClick={() => this.orderedItem()}><strong>Order</strong></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        })
-    }
-
+ 
     render() {
         return (
             <div className="procurement-container">
-                {this.renderItems()}
+                {
+                  items.map(item => {
+                    return <ProcurementItem name={item.name} description={item.description} imageURL={item.imageUrl}/>
+                  })
+                }
             </div>
         )
     }
