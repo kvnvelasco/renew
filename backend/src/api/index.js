@@ -2,6 +2,6 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/user', userController);
+router.get('/user', require('./user').userController);
 
-export default router;
+module.exports = router;

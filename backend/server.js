@@ -15,4 +15,7 @@ app.use((req, res, next) => {
   console.log(`${res.statusCode} ${req.method.toUpperCase()} ${req.path} -- ${time}ms`)
 })
 
+app.use('/api/v1', require('./src/api'))
+
+
 app.listen(port, () => console.log(`Server is up on port ${port}`));
