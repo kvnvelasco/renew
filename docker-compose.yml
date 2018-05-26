@@ -23,7 +23,7 @@ services:
     volumes:
       - ./frontend:/opt/renew-frontend
       - front_modules:/opt/renew-frontend/node_modules
-  
+      
 volumes:
     front_modules:
     back_modules:
