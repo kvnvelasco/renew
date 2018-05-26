@@ -1,8 +1,8 @@
-
+const express = require('express')
 /**
  * User controller
- * @param {Request} req 
- * @param {Response} res 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
  * @param {*} next 
  */
 exports.userController = function userController(req, res, next) {
