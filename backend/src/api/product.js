@@ -43,8 +43,21 @@ function getProductByName(req, res, next) {
   })
 };
 
+function getProductsByCategory(req, res, next) {
+  const category = req.query.category
+  Product.find({ category }).then(product => {
+    res.status(200).send(product)
+    next();
+  }, err => {
+    console.log(err)
+    res.status(400).send(err)
+    next();
+  })
+};
+
 module.exports = {
   getProductById,
   getProductByName,
-  postProduct
+  postProduct,
+  getProductsByCategory
 }

@@ -1,4 +1,6 @@
-const initialState = [
+import actiontypes from '../actions/actiontypes';
+
+/* const initialState = [
   {
     "imageUrl": "https://ii.worldmarket.com/fcgi-bin/iipsrv.fcgi?FIF=/images/worldmarket/source/29365_XXX_v1.tif&wid=650&cvt=jpeg",
     "name": "Organizer / Container",
@@ -11,9 +13,16 @@ const initialState = [
     "description": "For unresponsive children",
     "secelted": false
   }
-]
+] */
 
-
-export default function procurablesReducer(state=initialState, action) {
-  return state
+export default function procurablesReducer(state=[], action) {
+  switch(action.type) {
+    case actiontypes.dispatchProducts: 
+      return [
+        ...state,
+        ...action.payload.items
+      ] 
+    default:   
+      return state
+  }    
 }
