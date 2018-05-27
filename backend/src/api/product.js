@@ -31,9 +31,16 @@ function getProductById(req, res, next) {
   })
 }
 
+
+function getProducts(req, res, next) {
+}
+
 function getProductByName(req, res, next) {
   const name = req.query.name
-  Product.find({ name }).then(product => {
+  
+  Product.find()
+    .populate('category')
+    .then(product => {
     res.status(200).send(product)
     next();
   }, err => {

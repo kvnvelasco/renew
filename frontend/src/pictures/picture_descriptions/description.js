@@ -5,7 +5,7 @@ const supply2 = {
 
 const supply3 = {
     name: "Plastic Benches", 
-    description: "Seats that can be used in many public areas of the school, has enough room to accomodate more people, and doesnt take much space."
+    description: "4 person outdoor or indoor bench"
 }
 
 const supply4 = {
