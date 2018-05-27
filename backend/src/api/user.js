@@ -9,8 +9,8 @@ const { User } = require('../../db/models');
 exports.getUser = function getUser(req, res, next) {
   // get the current user with the model somehow
   
-  const userid = "5b091ee641b04fca4bac0c5f"
-  User.findOne({"_id": userid}).then(user => {
+  const _id = "5b091ee641b04fca4bac0c5f"
+  User.findOne({ _id }).then(user => {
     res.status(200).send(user)
     next();
   }, err => {

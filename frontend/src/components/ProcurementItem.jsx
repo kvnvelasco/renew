@@ -24,35 +24,22 @@ export default class ProcurementItem extends React.Component {
   )
 
   orderedItem = () => {
-    if (this.state.selected) {
-      if (this.props.onOrder)
-        this.props.onOrder({id: this.props.id, quantity: this.state.qty});
-      this.setState({selected: false, qty: 1});
-    } else {
-      this.setState({ selected: true });
-    }
+    if (this.props.onOrder)
+      this.props.onOrder({ id: this.props.id, quantity: this.state.qty });
   }
 
   render() {
-    const {name, description, imageURL} = this.props
+    const {name, description, imageURL, price} = this.props
     return (
-      <div className="procurement-card">
-        <img className="procurement-image" src={imageURL} />
+      <div className="procurement-card" onClick={() => this.orderedItem()}>
+        <div className="procurement-image" style={{ backgroundImage: `url(${imageURL})`}} />
+        <div className="price">1,200 PHP/pc </div>
         <div className="procurement column-2">
-          <strong>{name}</strong> {description}
+          <strong>{name}</strong>
         </div>
         <div className="procurement column-3">
           <div className="procurement">
-            {this.state.selected ? this.renderItemCounter() : null}
             <div className="item-req">
-              <strong>10.6 REN / pc</strong>
-              <button className="btn btn-primary order-btn" onClick={() => this.orderedItem()}>
-                <strong>{
-                  this.state.selected
-                    ? 'Confirm'
-                    : 'Order'
-                }</strong>
-              </button>
             </div>
           </div>
         </div>

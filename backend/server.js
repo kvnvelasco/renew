@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-
 const port = process.env.PORT || 5000;
-
 const mongoose = require('./db/mongodb-connect');
+const initdb = require('./db/init');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,4 +20,7 @@ app.use((req, res, next) => {
 app.use('/api/v1', require('./src/api'))
 
 
-app.listen(port, () => console.log(`Server is up on port ${port}`));
+initdb()
+.then(() => {
+  app.listen(port, () => console.log(`Server is up on port ${port}`));
+});
