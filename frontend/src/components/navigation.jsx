@@ -14,10 +14,10 @@ export default function Navigation(props) {
                     <img className="logo" alt="logo" src={logo} />
                 </li>
                 <li className='nav--link-item'>
-                    <NavLink to="/procurement" className='button'>Procurement</NavLink>
+                    <NavLink to="/procurement" className='button'><strong>Procurement</strong></NavLink>
                 </li>
                 <li className='nav--link-item'>
-                    <NavLink to="/orders" className='button'>Pickups / Deliveries</NavLink>
+                    <NavLink to="/orders" className='button'><strong>Pickups / Deliveries</strong></NavLink>
                 </li>
                 {/* <li className='nav--link-item'>
                     <NavLink to="/account" className='button'>My&nbsp;Account</NavLink>
