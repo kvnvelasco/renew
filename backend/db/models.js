@@ -20,6 +20,7 @@ const productSchema = new Schema({
   name: { type: String, required: true },
   description: String,
   image_url: String,
+  type: { type: String, enum: ['single', 'lot', 'auction'], default: 'single' },
   category: { type: Schema.Types.ObjectId, ref: 'Category' }
 });
 

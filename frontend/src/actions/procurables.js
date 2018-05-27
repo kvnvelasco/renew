@@ -12,3 +12,12 @@ export function addToCart(item, qty) {
     })
   }
 }
+
+export function dispatchProducts(items) {
+  return {
+    type: actions.dispatchProducts,
+    payload: {
+      items 
+    }
+  }
+} 

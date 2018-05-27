@@ -1,19 +1,29 @@
 import './pages_styles/Procurement.css';
-
+import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import actiontypes from '../actions/actiontypes';
 import ProcurementItem from '../components/ProcurementItem';
-import { addToCart } from '../actions/procurables';
+import { addToCart, dispatchProducts } from '../actions/procurables';
 import Button from '../components/Button'
 
 class Procurement extends Component {
   static mapStoreToProps = (store, ownProps) => ({
     items: store.procurables
   })
-  
+
+  async componentWillMount() {
+    const category = 'furniture'
+    const url = `/api/v1/productcategory?category=${category}`
+    const res = await axios.get(url) 
+    const procurementItems = res.data
+
+    this.props.dispatch(dispatchProducts(procurementItems))
+  }
+
   render() {
     const {items} = this.props
+    console.log('items',items)
     return (
       <div className="procurement-container">
         <div 

@@ -31,9 +31,28 @@ function getProductById(req, res, next) {
   })
 }
 
+
+function getProducts(req, res, next) {
+}
+
 function getProductByName(req, res, next) {
   const name = req.query.name
-  Product.find({ name }).then(product => {
+  
+  Product.find()
+    .populate('category')
+    .then(product => {
+    res.status(200).send(product)
+    next();
+  }, err => {
+    console.log(err)
+    res.status(400).send(err)
+    next();
+  })
+};
+
+function getProductsByCategory(req, res, next) {
+  const category = req.query.category
+  Product.find({ category }).then(product => {
     res.status(200).send(product)
     next();
   }, err => {
@@ -46,5 +65,6 @@ function getProductByName(req, res, next) {
 module.exports = {
   getProductById,
   getProductByName,
-  postProduct
+  postProduct,
+  getProductsByCategory
 }
