@@ -1,0 +1,16 @@
+.cart--inner h4{
+    padding-top: 50px;
+    color: #5BC4BB;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.items-list{
+    border: 2px solid #5BC4BB;
+    width: 45%;
+    padding: 20px 0 15px 25px;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #8D8D8D;
+    font-size: 20px;
+}
