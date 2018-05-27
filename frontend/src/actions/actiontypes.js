@@ -17,6 +17,9 @@ export default {
   // pickups 
   schedulePickup: '[40] Schedule pickup of trash',
 
+  // procurement item
+  dispatchProducts: '[50] Dispatch products to store'
+
   // Store ?
   
   // Bidding?
