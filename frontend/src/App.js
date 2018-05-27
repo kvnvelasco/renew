@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/orders" component={OrdersPickups} />
             <Route path="/MyAccount" component={MyAccount} />
             <Route path='/checkout' component={Checkout} />
-            <Route path="/" component={Home} exact />
+            <Route path="/" component={Procurement} exact />
           </Switch>
         </div>
         <Toaster/>
