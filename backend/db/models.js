@@ -57,6 +57,9 @@ const PickUp = mongoose.model('PickUp', pickUpSchema);
 const Delivery = mongoose.model('Delivery', deliverySchema);
 const Wallet = mongoose.model('Wallet', walletSchema);
 const Category = mongoose.model('Category', categorySchema)
+const Meta = mongoose.model('Meta', new Schema({
+  seeded: Boolean
+}))
 
 module.exports = {
   User,
@@ -64,5 +67,6 @@ module.exports = {
   PickUp,
   Delivery,
   Wallet,
-  Category
+  Category,
+  Meta
 };
