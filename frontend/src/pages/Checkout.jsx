@@ -8,14 +8,6 @@ class Cart extends React.Component {
     items: store.cart.selectedItems
   })
 
-  groupByItemName = () => {
-    // var grouped = _.groupBy(this.props.items, function(item) {
-    //   return item.item.name;
-    // });
-    // console.log(grouped)
-    console.log(this.props.items)
-  }
-
   render() {
     const { items } = this.props
     return (
@@ -33,7 +25,7 @@ class Cart extends React.Component {
             : null}
         </div>
         <div style={{ marginTop: "20px" }}>
-          <Button onClick={this.groupByItemName()}>
+          <Button>
             Schedule Delivery
           </Button>
         </div>
