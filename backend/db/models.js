@@ -20,8 +20,13 @@ const productSchema = new Schema({
   name: { type: String, required: true },
   description: String,
   image_url: String,
-  category: String
+  category: { type: Schema.Types.ObjectId }
 });
+
+const categorySchema = new Schema({
+  name: String,
+  description: String,
+})
 
 const pickUpSchema = new Schema({
   date_taken: Date,
@@ -51,11 +56,13 @@ const Product = mongoose.model('Product', productSchema);
 const PickUp = mongoose.model('PickUp', pickUpSchema);
 const Delivery = mongoose.model('Delivery', deliverySchema);
 const Wallet = mongoose.model('Wallet', walletSchema);
+const Category = mongoose.model('Category', categorySchema)
 
 module.exports = {
   User,
   Product,
   PickUp,
   Delivery,
-  Wallet
+  Wallet,
+  Category
 };
