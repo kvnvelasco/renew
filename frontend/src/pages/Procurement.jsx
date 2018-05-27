@@ -7,14 +7,29 @@ import ProcurementItem from '../components/ProcurementItem';
 import { addToCart, dispatchProducts } from '../actions/procurables';
 import Button from '../components/Button'
 
+
 class Procurement extends Component {
+  constructor() {
+    super()
+    this.state = {
+      categories: []
+    }
+  }
+ 
   static mapStoreToProps = (store, ownProps) => ({
     items: store.procurables
   })
 
   async componentWillMount() {
-    const category = 'furniture'
-    const url = `/api/v1/productcategory?category=${category}`
+    const categories = await axios.get('/api/v1/category/all');
+    this.setState({ categories: categories.data })
+    console.log('state',this.state.categories)
+    if(categories.data.length)
+      this.getProducts(categories.data[0]._id);
+  } 
+
+  getProducts = async (categ_id) => {
+    const url = `/api/v1/productcategory?category=${categ_id}`
     const res = await axios.get(url) 
     const procurementItems = res.data
 
@@ -46,10 +61,21 @@ class Procurement extends Component {
           </div>
           <div className="marketplace-list">
             <div className="marketplace-categories">
-              <div className="marketplace-category no-select">
+              {this.state.categories.map((category, i) => {
+                return(
+                  <div 
+                    key={i}
+                    className="marketplace-category"
+                    onClick={() => this.getProducts(category._id)}
+                    >
+                    {category.name}
+                  </div>
+                )
+              })}
+              {/* <div className="marketplace-category no-select">
                 Categories
               </div>
-              <div className="marketplace-category active">
+              <div className="marketplace-category active" onClick={e => console.log(e.target)}>
                 Household Goods
               </div>
               <div className="marketplace-category">
@@ -66,7 +92,7 @@ class Procurement extends Component {
               </div>
               <div className="marketplace-category">
                 Art
-              </div>
+              </div> */}
             </div>
             <div className="marketplace-items padded-area">
               {
