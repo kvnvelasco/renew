@@ -32,10 +32,10 @@ class Procurement extends Component {
         >
           <h2 className="white">Marketplace</h2>
           <span>
-            Buy goods made from recycled materials on the 
+            Buy goods made from recycled materials 
           </span>
           <span>
-            marketplace with credits you’ve earned.
+            from all over the Philippines
           </span>
         </div>
         <div className="marketplace-main">
