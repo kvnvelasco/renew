@@ -44,11 +44,11 @@ export default class OrdersPickups extends Component {
                 <div key={idx} className="pickup-card">
                     <div className="label-pickup">Scheduled Pickup</div>
                     <div className="pickup-info">
-                        <div className="date">{date}</div>
-                        <div className="resched-cancel">
+                        <div className="date pick-up">{date}</div>
+                        {/* <div className="resched-cancel">
                             <button>Reschedule</button>
                             <button>Cancel</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             )
@@ -65,19 +65,21 @@ export default class OrdersPickups extends Component {
                 <div key={idx} className="delivery-card">
                     <div className="delivery-content">
                         <div className="delivery-orders">
-                            <div className="delivery">Delivery</div>
+                            <div className="delivery">
+                                Delivery
+                                <div className="date deliver">{delivery.date}</div>
+                            </div>
                             {
                                 delivery.orders.map((order) => <div className="orders">{order.qty}x {order.name}</div>)
                             }
                             {/* <div className="orders">10x pencil</div> */}
                         </div>
-                        <div className="date">{delivery.date}</div>
                     </div>
-                    <div className="resched-cancel">
+                    {/* <div className="resched-cancel">
                         <button>Add/Edit Order</button>
                         <button>Reschedule</button>
                         <button>Cancel</button>
-                    </div>
+                    </div> */}
                 </div>
             )
             // }
