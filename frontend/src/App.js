@@ -10,7 +10,7 @@ import MyAccount from './pages/MyAccount';
 import OrdersPickups from './pages/Orders_pickups';
 import Procurement from './pages/Procurement';
 import Toaster from './toast/toasters';
-
+import List from './pages/List';
 class App extends Component {
   render() {
     return (
@@ -20,6 +20,7 @@ class App extends Component {
           <Switch>
             <Route path="/procurement" component={Procurement} />
             <Route path="/orders" component={OrdersPickups} />
+            <Route path="/list" component={List} />
             <Route path="/MyAccount" component={MyAccount} />
             <Route path='/checkout' component={Checkout} />
             <Route path="/" component={Procurement} exact />

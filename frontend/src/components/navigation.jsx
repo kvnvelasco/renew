@@ -24,7 +24,7 @@ export default function Navigation(props) {
                 </li> */}
                 <li className='nav--link-item'>
                     <span>Your Balance</span>
-                    <div className="balance"><strong>3400</strong> REN</div>
+                    <div className="balance"><strong>3400</strong> PLAS</div>
                 </li>
                 <li className='nav--link-item'>
                     <Link to="/checkout">

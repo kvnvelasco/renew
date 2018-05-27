@@ -39,7 +39,7 @@ export default class ProcurementItem extends React.Component {
     return (
       <div className="procurement-card" onClick={() => this.setState({selected: true})}>
         <div className="procurement-image" style={{ backgroundImage: `url(${imageURL})`}} />
-        <div className="price">1,200 PHP/pc </div>
+        <div className="price">{price} PLAS</div>
         <div className="procurement column-2">
           <strong>{name}</strong>
         </div>

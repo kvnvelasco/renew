@@ -19,7 +19,6 @@ export default function procurablesReducer(state=[], action) {
   switch(action.type) {
     case actiontypes.dispatchProducts: 
       return [
-        ...state,
         ...action.payload.items
       ] 
     default:   

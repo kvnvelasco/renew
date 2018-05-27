@@ -12,6 +12,7 @@ class Procurement extends Component {
   constructor() {
     super()
     this.state = {
+      selected: 0,
       categories: []
     }
   }
@@ -23,22 +24,31 @@ class Procurement extends Component {
   async componentWillMount() {
     const categories = await axios.get('/api/v1/category/all');
     this.setState({ categories: categories.data })
-    console.log('state',this.state.categories)
     if(categories.data.length)
       this.getProducts(categories.data[0]._id);
   } 
 
-  getProducts = async (categ_id) => {
+  getProducts = async (categ_id, i) => {
     const url = `/api/v1/productcategory?category=${categ_id}`
     const res = await axios.get(url) 
     const procurementItems = res.data
 
     this.props.dispatch(dispatchProducts(procurementItems))
+    this.setState({selected: i})
+  }
+
+  getAllProducts = async () => {
+    const url = `/api/v1/product`
+    const res = await axios.get(url)
+    const procurementItems = res.data
+
+    this.props.dispatch(dispatchProducts(procurementItems))
+    // this.setState({ selected: i })
   }
 
   render() {
     const {items} = this.props
-    console.log('items',items)
+
     return (
       <div className="procurement-container">
         <div 
@@ -55,44 +65,26 @@ class Procurement extends Component {
         </div>
         <div className="marketplace-main">
           <div className="add-item padded-area text-right">
-            <Button>
+            <Button to="/list">
               + List an Item
             </Button>
           </div>
           <div className="marketplace-list">
             <div className="marketplace-categories">
+            <div className="marketplace-category" onClick={this.getAllProducts}>
+              All
+            </div>
               {this.state.categories.map((category, i) => {
                 return(
                   <div 
-                    key={i}
-                    className="marketplace-category"
-                    onClick={() => this.getProducts(category._id)}
+                    key={category._id}
+                    className={"marketplace-category" + (this.state.selected === i ? ' active' : '')}
+                    onClick={() => this.getProducts(category._id, i)}
                     >
                     {category.name}
                   </div>
                 )
               })}
-              {/* <div className="marketplace-category no-select">
-                Categories
-              </div>
-              <div className="marketplace-category active" onClick={e => console.log(e.target)}>
-                Household Goods
-              </div>
-              <div className="marketplace-category">
-                School Supplies
-              </div>
-              <div className="marketplace-category">
-                Construction Materials
-              </div>
-              <div className="marketplace-category">
-                3D Printer Fillament
-              </div>
-              <div className="marketplace-category">
-                Raw Plastic
-              </div>
-              <div className="marketplace-category">
-                Art
-              </div> */}
             </div>
             <div className="marketplace-items padded-area">
               {
@@ -100,9 +92,10 @@ class Procurement extends Component {
                   return <ProcurementItem
                     key={idx}
                     name={item.name}
+                    price={item.price}
                     description={item.description}
                     onOrder={({ quantity }) => this.props.dispatch(addToCart(item, quantity))}
-                    imageURL={item.imageUrl} />
+                    imageURL={item.image_url} />
                 })
               }
             </div>
