@@ -20,7 +20,7 @@ const productSchema = new Schema({
   name: { type: String, required: true },
   description: String,
   image_url: String,
-  category: { type: Schema.Types.ObjectId }
+  category: { type: Schema.Types.ObjectId, ref: 'Category' }
 });
 
 const categorySchema = new Schema({

@@ -24,19 +24,14 @@ export default class ProcurementItem extends React.Component {
   )
 
   orderedItem = () => {
-    if (this.state.selected) {
-      if (this.props.onOrder)
-        this.props.onOrder({id: this.props.id, quantity: this.state.qty});
-      this.setState({selected: false, qty: 1});
-    } else {
-      this.setState({ selected: true });
-    }
+    if (this.props.onOrder)
+      this.props.onOrder({ id: this.props.id, quantity: this.state.qty });
   }
 
   render() {
     const {name, description, imageURL, price} = this.props
     return (
-      <div className="procurement-card">
+      <div className="procurement-card" onClick={() => this.orderedItem()}>
         <div className="procurement-image" style={{ backgroundImage: `url(${imageURL})`}} />
         <div className="price">1,200 PHP/pc </div>
         <div className="procurement column-2">

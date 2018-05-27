@@ -27,7 +27,9 @@ export default function Navigation(props) {
                     <div className="balance"><strong>3400</strong> REN</div>
                 </li>
                 <li className='nav--link-item'>
-                    <img className="cart" alt="cart" src={cart} />
+                    <Link to="/checkout">
+                      <img className="cart" alt="cart" src={cart} />
+                    </Link>
                 </li>
             </ul>
         </nav>
