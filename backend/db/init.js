@@ -9,57 +9,57 @@ const categories = [
         name: "Toothbrush holder",
         description: "hold your tooth brushes",
         price: 80,
-        imageUrl: "https://i.imgur.com/mT8XdF3.jpg"
+        image_url: "https://i.imgur.com/mT8XdF3.jpg"
       },
       {
         name: "Plastic Chair",
         description: "Decorative piece for you home",
         price: 100,
-        imageUrl: "https://4.imimg.com/data4/DP/XI/MY-18325580/varmora-ergo-chair-500x500.jpg"
+        image_url: "https://4.imimg.com/data4/DP/XI/MY-18325580/varmora-ergo-chair-500x500.jpg"
       },
       {
         name: "Broom",
         description: "Cleaning utilities for your home.",
         price: 120,
-        imageUrl: "https://5.imimg.com/data5/SF/YV/MY-33039804/plastic-broomstick-500x500.jpg"
+        image_url: "https://5.imimg.com/data5/SF/YV/MY-33039804/plastic-broomstick-500x500.jpg"
       },
       {
         name: "Plates",
         description: "Disposable plates",
         price: 80,
-        imageUrl: "http://www.americanwholesalers.us/wp-content/uploads/2016/10/PL005001.jpg"
+        image_url: "http://www.americanwholesalers.us/wp-content/uploads/2016/10/PL005001.jpg"
       },
       {
         name: "Cabinet",
         description: "Storage for clothes and things alike",
         price: 90,
-        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEee6t5Gnf3darwdxqvQsGMNGM4zBDBr4xDVhFnDHPJXjlktO7"
+        image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEee6t5Gnf3darwdxqvQsGMNGM4zBDBr4xDVhFnDHPJXjlktO7"
       },
       {
         name: "Kitchenware",
         description: "Complpete dining set, that is tottaly disposable",
         price: 200,
-        imageUrl: "https://thumbs.dreamstime.com/b/disposable-bright-plastic-kitchenware-stacked-white-colourful-tableware-isolated-background-55424879.jpg"
+        image_url: "https://thumbs.dreamstime.com/b/disposable-bright-plastic-kitchenware-stacked-white-colourful-tableware-isolated-background-55424879.jpg"
       }, {
         name: "Water Jugs",
         description: "Water jugs that could store up to 2L",
         price: 300,
-        imageUrl: "http://www.dynastyplastic.com/images/plastic-jugs-k-1530.jpg"
+        image_url: "http://www.dynastyplastic.com/images/plastic-jugs-k-1530.jpg"
       }, {
         name: "Laundry Baskets",
         description: "For all your soiled laundry",
         price: 80,
-        imageUrl: "https://rukminim1.flixcart.com/image/312/312/fruit-vegetable-basket/z/g/n/rbm1-fair-food-original-imaeg72amx5wcn9c.jpeg?q=70"
+        image_url: "https://rukminim1.flixcart.com/image/312/312/fruit-vegetable-basket/z/g/n/rbm1-fair-food-original-imaeg72amx5wcn9c.jpeg?q=70"
       }, {
         name: "Hangers",
         description: "For your linen",
         price: 80,
-        imageUrl: "https://sc02.alicdn.com/kf/HTB1Hc4mPFXXXXXMXXXXq6xXFXXXx/226837347/HTB1Hc4mPFXXXXXMXXXXq6xXFXXXx.jpg"
+        image_url: "https://sc02.alicdn.com/kf/HTB1Hc4mPFXXXXXMXXXXq6xXFXXXx/226837347/HTB1Hc4mPFXXXXXMXXXXq6xXFXXXx.jpg"
       }, {
         name: "Mop Bucket",
         description: "For easier mop cleaning",
         price: 80,
-        imageUrl: "https://www.safetyshop.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/j/a/jan1041_gn_1.jpg"
+        image_url: "https://www.safetyshop.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/j/a/jan1041_gn_1.jpg"
       }
 
     ]
@@ -70,25 +70,25 @@ const categories = [
         name: "Floor Tiles",
         description: "Beautiful high density plastic floor tiles",
         price: 20,
-        imageUrl: "https://i.imgur.com/2Wp0MNs.jpg"
+        image_url: "https://i.imgur.com/2Wp0MNs.jpg"
       },
       {
         name: "Plastic Beams",
         description: "Solid plastic beams for construction or scaffolding",
         price: 150,
-        imageUrl: "https://www.kaceyplastics.co.uk/assets/images-panels/beams-800.png"
+        image_url: "https://www.kaceyplastics.co.uk/assets/images-panels/beams-800.png"
       },
       {
         name: "Plastic Beams",
         description: "Solid plastic beams for construction or scaffolding",
         price: 150,
-        imageUrl: "https://www.wonderlandmodels.com/media/managed/large/i_beams3.jpg"
+        image_url: "https://www.wonderlandmodels.com/media/managed/large/i_beams3.jpg"
       },
       {
         name: "Ladder",
         description: "Solid construction",
         price: 500,
-        imageUrl: "https://images.homedepot-static.com/productImages/357cf2e2-dedc-4e4b-a827-5d2ad7a25c3c/svn/werner-step-ladders-6204s-64_1000.jpg"
+        image_url: "https://images.homedepot-static.com/productImages/357cf2e2-dedc-4e4b-a827-5d2ad7a25c3c/svn/werner-step-ladders-6204s-64_1000.jpg"
       },
     ]
   },
@@ -138,7 +138,7 @@ const categories = [
         name: "Green PET 0.5mm 1.2kg",
         description: "Recycled PET fillament",
         price: 1800,
-        imageUrl: "http://3dprintingindustry.com/wp-content/uploads/2014/08/PET_filament-3dpi-png.png"
+        image_url: "http://3dprintingindustry.com/wp-content/uploads/2014/08/PET_filament-3dpi-png.png"
       },
       {
         name: "Blue PET 0.5mm 1.2kg",
